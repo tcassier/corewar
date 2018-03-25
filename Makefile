@@ -6,7 +6,7 @@
 #    By: tcassier <tcassier@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/12/07 23:19:18 by tcassier          #+#    #+#              #
-#    Updated: 2018/03/25 16:54:32 by tcassier         ###   ########.fr        #
+#    Updated: 2018/03/25 20:47:10 by tcassier         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@
 NAME_1 = corewar
 NAME_2 = asm
 
-PATH_1 = ./vm_dir/
+PATH_1 = ./dir_vm/
 SRCS_1_PATH = $(PATH_1)srcs/
 SRCS_1 = $(addprefix $(SRCS_1_PATH), \
 		 main.c                      \
@@ -39,7 +39,7 @@ SRCS_1 = $(addprefix $(SRCS_1_PATH), \
 		 op_utils.c                  \
 		 op_arg.c)
 
-PATH_2 = ./asm_dir/
+PATH_2 = ./dir_asm/
 SRCS_2_PATH = $(PATH_2)src/
 SRCS_2 = $(addprefix $(SRCS_2_PATH), \
 		 asm.c                       \
