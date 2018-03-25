@@ -6,7 +6,7 @@
 /*   By: tcassier <tcassier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/01 16:06:31 by tcassier          #+#    #+#             */
-/*   Updated: 2018/03/16 17:53:16 by tcassier         ###   ########.fr       */
+/*   Updated: 2018/03/25 23:48:44 by tcassier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static char	*asm_op_params_jump(t_asm *data, char *tmp, int idx_param)
 	}
 	else
 	{
-		while (!ft_isspace(*tmp) && *tmp)
+		while (!ft_isspace(*tmp) && *tmp && *tmp == ',')
 			tmp++;
 		tmp = ft_spacejump(tmp);
 		if (*tmp != COMMENT_CHAR && *tmp)
@@ -81,7 +81,7 @@ void		asm_op_line(t_asm *data, char *tmp)
 		data->file[data->size] = g_op_tab[idx].opcode;
 		data->pc = data->size;
 		data->size++;
-		while (!ft_isspace(*tmp))
+		while (*tmp && !ft_isspace(*tmp))
 			tmp++;
 		data->idx = idx;
 		asm_op_params(data, tmp);
