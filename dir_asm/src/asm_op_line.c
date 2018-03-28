@@ -6,7 +6,7 @@
 /*   By: tcassier <tcassier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/01 16:06:31 by tcassier          #+#    #+#             */
-/*   Updated: 2018/03/25 23:51:25 by tcassier         ###   ########.fr       */
+/*   Updated: 2018/03/28 17:10:02 by allauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,10 @@ static char	*asm_op_params_jump(t_asm *data, char *tmp, int idx_param)
 	}
 	else
 	{
-		while (!ft_isspace(*tmp) && *tmp && *tmp == ',')
+		while (!ft_isspace(*tmp) && *tmp && *tmp != ',')
 			tmp++;
+		if (*tmp == ',')
+			asm_error_7(data);
 		tmp = ft_spacejump(tmp);
 		if (*tmp != COMMENT_CHAR && *tmp)
 			asm_error_7(data);
