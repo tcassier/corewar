@@ -6,7 +6,7 @@
 /*   By: tcassier <tcassier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/13 09:17:32 by tcassier          #+#    #+#             */
-/*   Updated: 2018/03/25 23:46:32 by tcassier         ###   ########.fr       */
+/*   Updated: 2018/03/29 20:54:11 by tcassier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ static int	asm_op_reg(t_asm *data, char *tmp)
 	data->size++;
 	while (ft_isdigit(*tmp))
 		tmp++;
-	if (!ft_isspace(*tmp) && *tmp && *tmp != ',')
+	if (!ft_isspace(*tmp) && *tmp && *tmp != ',' && *tmp != COMMENT_CHAR)
 		asm_error_7(data);
 	return (1);
 }
@@ -66,7 +66,7 @@ static int	asm_op_dir(t_asm *data, char *tmp, int ft)
 			tmp++;
 		while (ft_isdigit(*tmp))
 			tmp++;
-		if (!ft_isspace(*tmp) && *tmp && *tmp != ',')
+		if (!ft_isspace(*tmp) && *tmp && *tmp != ',' && *tmp != COMMENT_CHAR)
 			asm_error_7(data);
 	}
 	data->size += ft;
@@ -94,7 +94,7 @@ static int	asm_op_ind(t_asm *data, char *tmp)
 			tmp++;
 		while (ft_isdigit(*tmp))
 			tmp++;
-		if (!ft_isspace(*tmp) && *tmp && *tmp != ',')
+		if (!ft_isspace(*tmp) && *tmp && *tmp != ',' && *tmp != COMMENT_CHAR)
 			asm_error_7(data);
 	}
 	data->size += 2;
