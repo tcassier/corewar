@@ -6,7 +6,7 @@
 /*   By: tcassier <tcassier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/04 13:32:51 by tcassier          #+#    #+#             */
-/*   Updated: 2018/03/25 16:49:49 by tcassier         ###   ########.fr       */
+/*   Updated: 2018/03/31 15:05:26 by tcassier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ typedef struct			s_op
 	int					has_idx;
 }						t_op;
 
-extern t_op				g_op_tab[17];
+t_op					g_op_tab[17];
 
 void					asm_add_lab(t_asm *data, char *name);
 void					asm_add_lab_pos(t_asm *data, char *tmp,
