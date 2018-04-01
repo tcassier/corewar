@@ -6,7 +6,7 @@
 /*   By: tcassier <tcassier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/14 01:25:09 by tcassier          #+#    #+#             */
-/*   Updated: 2018/03/14 23:12:35 by tcassier         ###   ########.fr       */
+/*   Updated: 2018/04/01 21:02:05 by tcassier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,11 @@ void			asm_add_lab_pos(t_asm *data, char *tmp, int pc, int size)
 	idx = 0;
 	while (ft_strchr(LABEL_CHARS, tmp[idx]) && tmp[idx])
 		idx++;
-	if (!ft_isspace(tmp[idx]) && tmp[idx] && tmp[idx] != ',')
+	if (data->param != g_op_tab[data->idx].nb_params - 1 &&
+	tmp[idx] == COMMENT_CHAR)
+		asm_error_7(data);
+	if (!ft_isspace(tmp[idx]) && tmp[idx] && tmp[idx] != ','
+	&& tmp[idx] != COMMENT_CHAR)
 		asm_error_7(data);
 	if (!(name = ft_strndup(tmp, idx)))
 		asm_error_9(data);

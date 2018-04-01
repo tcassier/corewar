@@ -6,7 +6,7 @@
 /*   By: tcassier <tcassier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/01 16:06:31 by tcassier          #+#    #+#             */
-/*   Updated: 2018/03/30 13:48:05 by tcassier         ###   ########.fr       */
+/*   Updated: 2018/04/01 21:02:07 by tcassier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,27 +39,26 @@ static char	*asm_op_params_jump(t_asm *data, char *tmp, int idx_param)
 
 static void	asm_op_params(t_asm *data, char *tmp)
 {
-	int		idx_param;
 	int		ocp;
 	int		check;
 
-	idx_param = 0;
+	data->param = 0;
 	ocp = 0;
 	if (g_op_tab[data->idx].has_ocp)
 	{
 		check = data->size;
 		data->size += 1;
 	}
-	while (idx_param < g_op_tab[data->idx].nb_params)
+	while (data->param < g_op_tab[data->idx].nb_params)
 	{
 		tmp = ft_spacejump(tmp);
 		if (*tmp == '%' || *tmp == 'r' || *tmp == '-' || *tmp == ':' ||
 		ft_isdigit(*tmp))
-			ocp |= asm_op_type_param(data, idx_param, tmp);
+			ocp |= asm_op_type_param(data, data->param, tmp);
 		else
 			asm_error_7(data);
-		tmp = asm_op_params_jump(data, tmp, idx_param);
-		idx_param++;
+		tmp = asm_op_params_jump(data, tmp, data->param);
+		data->param++;
 	}
 	if (g_op_tab[data->idx].has_ocp)
 		asm_put_hexa(data->file + check, ocp, 1);

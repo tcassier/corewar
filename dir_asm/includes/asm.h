@@ -6,7 +6,7 @@
 /*   By: tcassier <tcassier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/04 13:32:51 by tcassier          #+#    #+#             */
-/*   Updated: 2018/03/31 15:05:26 by tcassier         ###   ########.fr       */
+/*   Updated: 2018/04/01 21:02:04 by tcassier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,7 @@ typedef struct			s_asm
 	int					pc;
 	int					idx;
 	int					error;
+	int					param;
 	t_labs				*labs;
 }						t_asm;
 

@@ -6,7 +6,7 @@
 /*   By: tcassier <tcassier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/28 23:50:01 by tcassier          #+#    #+#             */
-/*   Updated: 2018/03/29 20:45:54 by tcassier         ###   ########.fr       */
+/*   Updated: 2018/04/01 20:25:17 by tcassier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ void			asm_op_process(t_asm *data, char *tmp)
 	}
 	else if (ft_isalpha(*tmp))
 		asm_op_line(data, tmp);
+	else if (*tmp == COMMENT_CHAR)
+		return ;
 	else if (*tmp != '\0')
 		asm_error_7(data);
 	if (data->size > FILE_MAX_SIZE)
