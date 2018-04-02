@@ -77,7 +77,7 @@ clean:
 dclean:
 	rm -f $(DPDS)
 
-fclean:
+fclean: dclean
 	@make -C $(LIBFT_DIR) fclean
 	rm -f $(OBJS)
 	rm -f $(NAME)
