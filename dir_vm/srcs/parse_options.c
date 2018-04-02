@@ -6,7 +6,7 @@
 /*   By: allauren <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/07 13:19:40 by allauren          #+#    #+#             */
-/*   Updated: 2018/03/25 14:42:45 by allauren         ###   ########.fr       */
+/*   Updated: 2018/04/02 15:33:40 by allauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void			ft_parse_options(int argc, char **argv, t_param *p, t_memory *m)
 		tab[ft_select_option(argv, i, p)](argv[i], p, &p->opt);
 		i++;
 	}
-	if (argc < 1 && p->nb_champ == 0)
+	if (p->nb_champ == 0)
 		ft_perror("No champion");
 	if (p->opt.param || p->param)
 		ft_perror("Missing argument");

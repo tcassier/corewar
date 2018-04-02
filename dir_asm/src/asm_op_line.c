@@ -6,7 +6,7 @@
 /*   By: tcassier <tcassier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/01 16:06:31 by tcassier          #+#    #+#             */
-/*   Updated: 2018/04/01 21:02:07 by tcassier         ###   ########.fr       */
+/*   Updated: 2018/04/02 14:56:43 by tcassier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ void		asm_op_line(t_asm *data, char *tmp)
 	while (g_op_tab[idx].name)
 	{
 		if (!ft_strncmp(g_op_tab[idx].name, tmp, ft_strlen(g_op_tab[idx].name))
-		&& !ft_isalpha(tmp[ft_strlen(g_op_tab[idx].name)]))
+		&& ft_isspace(tmp[ft_strlen(g_op_tab[idx].name)]))
 			break ;
 		idx++;
 	}

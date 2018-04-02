@@ -6,7 +6,7 @@
 /*   By: tcassier <tcassier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/13 09:17:32 by tcassier          #+#    #+#             */
-/*   Updated: 2018/04/01 20:36:03 by tcassier         ###   ########.fr       */
+/*   Updated: 2018/04/02 15:25:54 by tcassier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,10 @@ static void	asm_check_fill(t_asm *data, char *tmp, int size)
 	count = 0;
 	while (tmp[count] && ft_isdigit(tmp[count]))
 		count++;
-	if (count > 2 && val == -1)
+	if (count > 2 && val == -1 && size == 4)
 		asm_error_10(data, 0);
-	if (size == 2 && (val > SHRT_MAX || val < SHRT_MIN))
+	if (size == 2 && ((count > 2 && val == -1) || (val > SHRT_MAX
+	|| val < SHRT_MIN)))
 		asm_error_10(data, 1);
 }
 

@@ -6,7 +6,7 @@
 /*   By: gsmith <gsmith@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/14 13:15:44 by gsmith            #+#    #+#             */
-/*   Updated: 2018/03/19 14:54:01 by gsmith           ###   ########.fr       */
+/*   Updated: 2018/04/02 15:56:12 by allauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ void	op_lfork(t_memory *mem, t_proc *proc, t_proc **lst_proc, t_timer *timer)
 		proc->err = FALSE;
 	else
 	{
-		proc_add(lst_proc, proc_dup(proc, dest));
+		proc_add(lst_proc, proc_dup(proc, pc_offset(proc->pc, dest)));
 		proc->pc = pc_offset(proc->pc, offset);
 	}
 }

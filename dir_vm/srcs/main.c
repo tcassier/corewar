@@ -6,7 +6,7 @@
 /*   By: allauren <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/07 13:04:36 by allauren          #+#    #+#             */
-/*   Updated: 2018/03/25 15:47:58 by gsmith           ###   ########.fr       */
+/*   Updated: 2018/04/02 15:57:03 by allauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void			vm_run(t_memory *mem, t_proc **proc, t_timer *timer)
 	cursor = *proc;
 	while (cursor)
 	{
-		opc = (mem->memory)[cursor->pc];
+		opc = (mem->memory)[cursor->pc % MEM_SIZE];
 		i = 0;
 		while (i < 16 && g_op_tab[i].opc != opc)
 			i++;

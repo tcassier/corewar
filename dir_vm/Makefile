@@ -6,7 +6,7 @@
 #    By: gsmith <gsmith@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/08 16:39:52 by gsmith            #+#    #+#              #
-#    Updated: 2018/03/25 18:06:22 by allauren         ###   ########.fr        #
+#    Updated: 2018/04/02 15:37:37 by allauren         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ OBJS_PATH = objs
 SRCS_PATH = srcs
 DPDS_PATH = depend
 INCL = -I $(HEADER_PATH) -I $(LIBFT_DIR)
-CFLAGS = -Wall -Wextra -Werror $(INCL)
+CFLAGS = -Wall -Wextra -g3 -Werror $(INCL)
 SRCS = $(addprefix $(SRCS_PATH)/,  \
 		main.c                     \
 		parser_options_functions.c \

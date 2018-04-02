@@ -15,7 +15,8 @@ start:
 	sti		r1, %:spawn_n, %1
 	sti		r1, %:makezork, %1
 	sti		r1, %:spawn_s, %1
-	sti		r1, %:south, %1
+	sti		r1, %:south , %1
+	sti		r1, %:south , %1
 	ld		%0, r16
 	fork	%:delay
 	zjmp	%:spawn_n
