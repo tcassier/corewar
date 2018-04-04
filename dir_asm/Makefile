@@ -6,7 +6,7 @@
 #    By: tcassier <tcassier@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/12/07 23:19:18 by tcassier          #+#    #+#              #
-#    Updated: 2018/03/25 17:20:10 by allauren         ###   ########.fr        #
+#    Updated: 2018/04/04 22:42:05 by tcassier         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,7 +61,7 @@ $(OBJ_PATH):
 	mkdir -p $(OBJ_PATH)
 
 clean: clean_lft
-	rm -f $(OBJ)
+	rm -f $(OBJS)
 	rm -rf $(OBJ_PATH)
 
 fclean: clean fclean_lft
