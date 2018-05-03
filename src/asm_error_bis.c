@@ -6,7 +6,7 @@
 /*   By: tcassier <tcassier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/27 17:51:23 by tcassier          #+#    #+#             */
-/*   Updated: 2018/04/02 15:19:19 by tcassier         ###   ########.fr       */
+/*   Updated: 2018/05/03 21:36:51 by tcassier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,11 @@
 
 void	asm_error_6(t_asm *data)
 {
-	int	error;
-
 	get_next_line(data->fd, NULL);
 	asm_labs_del(data->labs);
 	close(data->fd);
 	free(data->file);
 	free(data->line);
-	error = data->error;
 	free(data);
 	if (ft_putstr_fd("Error: Label used doesn't exists\n", 2) < 0)
 		ft_perror("Error");
