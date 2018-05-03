@@ -1,8 +1,5 @@
-#by gsmith, it's something
-#2018
-
-.name		"jaures"
-.comment	"Le capitalisme porte en lui la guerre comme la nuee porte l'orage"
+.name		"champion"
+.comment	"no comment"
 
 
 welllive:
